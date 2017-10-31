@@ -1,11 +1,11 @@
-##### - 除了用```console.log```，还可以考虑用```debugger```打断点
+ - ##### 除了用```console.log```，还可以考虑用```debugger```打断点
 ```js
 if (thisThing) {
     debugger;
 }
 ```
 结果;
-##### - 为了更方便阅读obj的对象参数结构及内容，可以用```console.table```打印成表格
+- ##### 为了更方便阅读obj的对象参数结构及内容，可以用```console.table```打印成表格
 ```js
 var animals = [
     { animal: 'Horse', name: 'Henry', age: 43 },
@@ -17,7 +17,7 @@ console.table(animals);
 结果:
 ![](https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png)
 
-##### - 用```console.time()``` 和```console.timeEnd()```记录执行某段代码所消耗的时间
+- ##### 用```console.time()``` 和```console.timeEnd()```记录执行某段代码所消耗的时间
 ```js
 console.time('Timer1');
  
