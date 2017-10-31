@@ -1,11 +1,11 @@
-- #### 除了用```console.log```，还可以考虑用```debugger```打断点
+- ### 除了用```console.log```，还可以考虑用```debugger```打断点
 ```js
 if (thisThing) {
     debugger;
 }
 ```
 
-- #### 为了更方便阅读obj的对象参数结构及内容，可以用```console.table```打印成表格
+- ### 为了更方便阅读obj的对象参数结构及内容，可以用```console.table```打印成表格
 ```js
 var animals = [
     { animal: 'Horse', name: 'Henry', age: 43 },
@@ -17,7 +17,7 @@ console.table(animals);
 **output:**
 ![](https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png)
 
-- #### 用```console.time()``` 和```console.timeEnd()```记录执行某段代码所消耗的时间
+- ### 用```console.time()``` 和```console.timeEnd()```记录执行某段代码所消耗的时间
 ```js
 console.time('Timer1');
  
@@ -34,7 +34,7 @@ console.timeEnd('Timer1');
 Timer1: 9.010986328125ms
 ```
 
-- #### 追踪程序层层回调的函数序列
+- ### 追踪程序层层回调的函数序列
 ```js
 var car;
 var func1 = function() {
@@ -71,7 +71,7 @@ func1();
 **output:**
 ![](https://github.com/cxiling/nodejs/blob/master/imgs/UUMB%5BYPZECQK%7D%40%60W9G3J5EX.png)
 
-- #### debug()
+- ### debug()
 调试时常用到两种方法
 1. 在调试工具上打断点
 2. 在代码上加debugger(上文第一点)
