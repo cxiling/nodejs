@@ -70,3 +70,12 @@ func1();
 ```
 **output:**
 ![]('https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png')
+
+- #### debug()
+调试时常用到两种方法
+1. 在调试工具上打断点
+2. 在代码上加debugger(上文第一点)
+这两种方法都要在需要知道指定函数所在的位置，而使用```debug()```就无须知道函数的位置了
+使用方式
+![]('https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png')
+
