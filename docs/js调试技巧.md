@@ -1,4 +1,4 @@
- - #### 除了用```console.log```，还可以考虑用```debugger```打断点
+- #### 除了用```console.log```，还可以考虑用```debugger```打断点
 ```js
 if (thisThing) {
     debugger;
@@ -14,7 +14,7 @@ var animals = [
 ];
 console.table(animals);
 ```
-result:
+**output:**
 ![](https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png)
 
 - #### 用```console.time()``` 和```console.timeEnd()```记录执行某段代码所消耗的时间
@@ -29,7 +29,44 @@ for(var i = 0; i < 100000; i++){
  
 console.timeEnd('Timer1');
 ```
-result:
+**output:**
 ```
 Timer1: 9.010986328125ms
 ```
+
+- #### 追踪程序层层回调的函数序列
+```js
+var car;
+var func1 = function() {
+    func2();
+}
+
+var func2 = function() {
+    func4();
+}
+var func3 = function() {
+}
+
+var func4 = function() {
+    car = new Car();
+    car.funcX();
+}
+var Car = function() {
+    this.brand = 'volvo';
+    this.color = 'red';
+    this.funcX = function() {
+        this.funcY();
+    }
+
+    this.funcY = function() {
+        this.funcZ();
+    }
+
+    this.funcZ = function() {
+        console.trace('trace car')
+    }
+}
+func1();
+```
+**output:**
+![]('https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png')
