@@ -69,4 +69,4 @@ var Car = function() {
 func1();
 ```
 **output:**
-![]('https://github.com/cxiling/nodejs/blob/master/imgs/UUMB%5BYPZECQK%7D%40%60W9G3J5EX.png')
+![](https://github.com/cxiling/nodejs/blob/master/imgs/UUMB%5BYPZECQK%7D%40%60W9G3J5EX.png)
