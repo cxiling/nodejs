@@ -14,7 +14,7 @@ var animals = [
 ];
 console.table(animals);
 ```
-结果:
+result:
 ![](https://github.com/cxiling/nodejs/blob/master/imgs/O%5BW_ZM%24QWR~M_2PN80AEXWA.png)
 
 - #### 用```console.time()``` 和```console.timeEnd()```记录执行某段代码所消耗的时间
@@ -29,7 +29,7 @@ for(var i = 0; i < 100000; i++){
  
 console.timeEnd('Timer1');
 ```
-结果
+result:
 ```
 Timer1: 9.010986328125ms
 ```
