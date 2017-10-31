@@ -29,3 +29,7 @@ for(var i = 0; i < 100000; i++){
  
 console.timeEnd('Timer1');
 ```
+结果
+```
+Timer1: 9.010986328125ms
+```
