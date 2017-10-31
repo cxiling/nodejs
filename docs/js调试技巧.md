@@ -4,7 +4,7 @@ if (thisThing) {
     debugger;
 }
 ```
-结果;
+
 - #### 为了更方便阅读obj的对象参数结构及内容，可以用```console.table```打印成表格
 ```js
 var animals = [
