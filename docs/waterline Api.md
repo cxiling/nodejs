@@ -1,7 +1,7 @@
 # waterline
  ###### waterline是sails配套ORM
 
- ###方法
+ ### 方法
  	
  	####Models相关
 
