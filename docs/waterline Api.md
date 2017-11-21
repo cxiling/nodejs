@@ -27,3 +27,6 @@
  - **.stream()**
  	返回一系列匹配的记录序列
  > https://sailsjs.com/documentation/reference/waterline-orm/models
+
+ - **.toJSON()**
+ - **.toObject()**
