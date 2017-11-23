@@ -30,3 +30,26 @@
 
  - **.toJSON()**
  - **.toObject()**
+
+ ### Model属性配置
+
+ > https://sailsjs.com/documentation/concepts/models-and-orm/attributes
+
+ 
+  - **type** 
+   - string
+   - text
+   - integer
+   - float
+   - date
+   - datetime
+   - boolean
+   - binary
+   - array
+   - json
+   - mediumtext
+   - longtext
+   - objectid
+
+
+  - 
