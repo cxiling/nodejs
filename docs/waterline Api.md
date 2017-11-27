@@ -12,6 +12,12 @@
  	```
  - **.find()**
  	查找匹配的所有记录，返回对象数组
+
+```js
+  userlist.find().paginate({page: 1, limit: 10}) //查询第一页，每页10条
+  userlist.find({limit:2,skip:3}) //查询第三到第五条数据
+```
+
  - **.findOne()**
  	查找匹配的记录，返回一个对象，找不到则返回null
  - **.update()**
@@ -25,7 +31,14 @@
  - **.native()/query()**
  	貌似和数据库操作有关的，还没具体了解，MongoDB适用.native()，其余SQL用.query()
  - **.stream()**
- 	返回一系列匹配的记录序列
+  返回一系列匹配的记录序列
+ - **.count()**
+ 	返回总数
+
+  ```js
+  userlist.count()
+  ```
+
  > https://sailsjs.com/documentation/reference/waterline-orm/models
 
  - **.toJSON()**
@@ -52,4 +65,106 @@
    - objectid
 
 
-  - 
+  - **关联model**
+
+  ```js
+    // form models 定义
+    module.exports = {
+        name:'string',
+        title: 'string', //标题
+        owner:{
+          model:'user'
+        }
+
+    }
+
+  ```
+
+  ```js
+    //Controller文件
+    form.find({name:'e'}).populate('owner')//填入关联数据
+  ```
+
+  原数据：
+
+  ```js
+    {
+      "owner": 3,
+      "title": "m",
+      "name": "e",
+      "createdAt": "2017-11-23T06:33:43.314Z",
+      "updatedAt": "2017-11-23T06:33:43.314Z",
+      "id": 11006
+    }
+  ```
+
+
+  output:
+
+  ```js
+    {
+      "owner": {
+        "account": "3634965",
+        "mail": "chenxiling@52tt.com",
+        "name": "secret",
+        "password": "6fdb05818235c41717279c023cf6bb9567c0bdd6ec776e1ca14a6b1b29e29533",
+        "head": "https://api.52tt.com/face?account=tt3634965",
+        "phone": "",
+        "sex": 0,
+        "comments": null,
+        "status": 0,
+        "createdAt": "2017-11-03T03:39:49.427Z",
+        "updatedAt": "2017-11-03T07:43:56.344Z",
+        "id": 3,
+        "lastLogin": "2017-11-03T07:43:56.342Z"
+      },
+      "title": "m",
+      "name": "e",
+      "createdAt": "2017-11-23T06:33:43.314Z",
+      "updatedAt": "2017-11-23T06:33:43.314Z",
+      "id": 11006
+    }
+  ```
+
+  追加关联
+
+  ```js
+  finn.adoptedPets.add(jake.id);
+  finn.save()
+  ```
+
+  移除关联
+
+  ```js
+  r[0].pets.remove(7);
+  r[0].save(console.log)
+  
+  /*
+  { pets:
+      [
+       {
+         name: 'Rainbow Dash',
+         color: 'blue',
+         id: 8,
+         createdAt: Wed Feb 12 2014 18:06:50 GMT-0600 (CST),
+         updatedAt: Wed Feb 12 2014 18:06:50 GMT-0600 (CST) 
+        },
+        { 
+          name: 'Applejack',
+           color: 'orange',
+           id: 9,
+           createdAt: Wed Feb 12 2014 18:06:50 GMT-0600 (CST),
+           updatedAt: Wed Feb 12 2014 18:06:50 GMT-0600 (CST) 
+        }
+      ],
+    name: 'Mike',
+    age: 16,
+    createdAt: Wed Feb 12 2014 18:06:50 GMT-0600 (CST),
+    updatedAt: Wed Feb 12 2014 19:30:54 GMT-0600 (CST),
+    id: 7 
+  }
+
+  */
+
+  ```
+
