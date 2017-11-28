@@ -68,7 +68,8 @@
   - **关联model**
 
   ```js
-    // form models 定义
+    // form models 定义 
+    //一对一
     module.exports = {
         name:'string',
         title: 'string', //标题
@@ -168,3 +169,24 @@
 
   ```
 
+  - **生命周期**
+
+```js
+{
+  identity:
+  connection:
+  attributes:{
+    name:{type:'string',unique:true,required:true}
+    ...
+  },
+  beforeValidate: fn(values, cb)
+  afterValidate: fn(values, cb)
+  beforeCreate: fn(values, cb)
+  afterCreate: fn(newlyInsertedRecord, cb)
+}
+```
+
+
+ - **unique**
+
+ 在```exec()```方法里不能获取unique错误，只能通过```try...catch(err)```
