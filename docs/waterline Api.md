@@ -190,3 +190,18 @@
  - **unique**
 
  在```exec()```方法里不能获取unique错误，只能通过```try...catch(err)```
+
+ - **查询条件**
+   - '<' 
+   - '<='
+   - '>'
+   - '>='
+   - '!'
+   - 'like' 从头匹配{'like':'123'},从尾匹配{'like':'%123'}
+   - 'contains' 任意位置包含
+   - 'startsWith'
+   - 'endWith'
+
+   ```js
+    userlist.find({date:{'<':new Date('2/4/2014')}})
+   ```
