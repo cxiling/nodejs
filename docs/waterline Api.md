@@ -205,3 +205,19 @@
    ```js
     userlist.find({date:{'<':new Date('2/4/2014')}})
    ```
+
+  - **主键**
+默认指定数据库自动加的id为主键，
+如果要自定义主键,需要对model加```autoPK:false```(不使用默认主键)，并在想要自定义的主键字段加上```primaryKey:true```
+```js
+const FormInfo = Waterline.Collection.extend({
+    identity: "form_info",
+    connection: "myMongo",
+    attributes: {
+        create_type: {type: 'integer', defaultsTo: 0},// 0 客服创建，1 邮件创建/旧版 
+        cms_id:      {model:'form_user'},//客服CMS ID
+        form_id:     {type: 'integer', required: true, unique: true, primaryKey:true},//工单ID
+    },
+    autoPK: false,
+});
+```
