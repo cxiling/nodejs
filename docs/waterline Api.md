@@ -221,3 +221,4 @@ const FormInfo = Waterline.Collection.extend({
     autoPK: false,
 });
 ```
+表关系关联只会通过主键id来获取
