@@ -1,0 +1,1 @@
+```git remote prune origin``` 清理远程分支，把本地不存在的远程分支删除

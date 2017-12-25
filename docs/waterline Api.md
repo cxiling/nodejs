@@ -16,7 +16,9 @@
 ```js
   userlist.find().paginate({page: 1, limit: 10}) //查询第一页，每页10条
   userlist.find({limit:2,skip:3}) //查询第三到第五条数据
+  userlist.find().sort('id ASC') //按id顺序排序
 ```
+
 
  - **.findOne()**
  	查找匹配的记录，返回一个对象，找不到则返回null
@@ -28,16 +30,15 @@
  	查找匹配的记录，有则返回一个对象，没有则创建一条新的记录
  - **.count()**
  	查找匹配的所有记录的数量
- - **.native()/query()**
- 	貌似和数据库操作有关的，还没具体了解，MongoDB适用.native()，其余SQL用.query()
- - **.stream()**
-  返回一系列匹配的记录序列
- - **.count()**
  	返回总数
 
   ```js
   userlist.count()
   ```
+ - **.native()/query()**
+  貌似和数据库操作有关的，还没具体了解，MongoDB适用.native()，其余SQL用.query()
+ - **.stream()**
+  返回一系列匹配的记录序列
 
  > https://sailsjs.com/documentation/reference/waterline-orm/models
 
