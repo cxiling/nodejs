@@ -1,4 +1,4 @@
-1. Please try running this command again as root/Administrator.
+- Please try running this command again as root/Administrator.
 A complete log of this run can be found in:
 。。。.log
 
