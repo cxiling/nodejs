@@ -7,3 +7,9 @@
 **解决方案**
 
 npm cache verify
+
+- 删除node_module
+
+**解决方案**
+npm install rimraf
+rimraf node_modules
